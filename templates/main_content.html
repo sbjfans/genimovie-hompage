@@ -1,0 +1,210 @@
+{% extends 'main.html' %}
+
+{% block title %}홈페이지{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}"> 
+<main>
+    <section class="movie-section">
+        <h2>지금 핫한 실시간 영화 계획 추천! </h2>
+        <div class="movie-cards">
+            <!-- 영화 카드 항목들 -->
+            {% for movie in movies %}
+            <div class="movie-card">
+                <img src="/static/images/{{ movie.movie_id }}.jpg" alt="{{ movie.title }}">
+                <h3>{{ movie.title }}</h3>
+                <div class="recommendations">
+                    <span>추천수 : {{ movie.recommendations }}</span>
+                    <button class="recommend-button">추천하기</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="additional-section">
+        <div class="section-title">추천 실시간 같이보기</div>
+        <div class="influencer-cards">
+            <div class="influencer-card">
+                <img src="/static/images/aipeople01.png" alt="인플루언서1">
+                <h3>별하늘</h3>
+                <div class="status">OnAir <span class="status-dot"></span></div>
+            </div>
+            <div class="influencer-card">
+                <img src="/static/images/aipeople02.png" alt="인플루언서2">
+                <h3>김지훈</h3>
+                <div class="status">OnAir <span class="status-dot"></span></div>
+            </div>
+            <div class="influencer-card">
+                <img src="/static/images/aipeople03.png" alt="인플루언서3">
+                <h3>민정</h3>
+                <div class="status">OnAir <span class="status-dot"></span></div>
+            </div>
+            <div class="influencer-card">
+                <img src="/static/images/aipeople04.png" alt="인플루언서4">
+                <h3>강서연</h3>
+                <div class="status">OnAir <span class="status-dot"></span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="film-personnel-section">
+        <!-- 상단 부분: 이미지와 글 -->
+        <div class="film-personnel-top">
+            <!-- 이미지 부분 -->
+            <div class="film-personnel-image">
+                <img src="/static/images/bong.png" alt="영화인 이미지">
+            </div>
+            <!-- 글 부분 -->
+            <div class="film-personnel-text">
+                <p><strong>이 달의 영화인: 봉준호</strong></p>
+                <p>
+                    제92회 아카데미 최다(작품상, 감독상, 각본상, 국제 장편 영화상) 수상. 비영어권 영화 최초 아카데미 작품상 수상. 
+                </p>
+            </div>
+        </div>
+        <!-- 하단 부분: 긴 글 -->
+        <div class="film-personnel-bottom">
+            <p>
+                칸 황금종려상과 아카데미 작품상 역대 세 번째 동시 수상. 봉준호 감독의 '기생충'이 100년 한국 영화 역사를 넘어 할리우드 역사에서 새로 쓴 기록이다. 장벽이 높기로 유명한 할리우드에서 영어가 아닌 순수 한국어 영화로 오스카 4관왕...
+            </p>
+            <p>
+                <a href="https://" target="_blank">자세한 인터뷰 보기</a>
+            </p>
+        </div>
+    </section>
+    
+    
+
+    <section class="dummy-section">
+        <h2>광고</h2>
+        <div class="film-details">
+            <!-- 더미 섹션에 광고 이미지 추가 -->
+            <img src="/static/images/ad.jpg" alt="Advertisement" class="ad-image">
+        </div>
+    </section>
+    
+
+    <section class="indi-film-section">
+        <h2>이번 주 독립 영화 상영</h2>
+        <div class="indi-film-card">
+            <img src="/static/images/indiemovie.jpg" alt="존 오브 인터레스트">
+            
+        </div>
+    </section>
+
+    <section class="ai-recommendation-section">
+        <h2>이번 주 AI 추천 영화</h2>
+        <div class="film-details" style="display: flex; align-items: flex-start; height: 90%; padding: 20px; box-sizing: border-box; position: relative; top: -20px;">
+            <!-- AI 추천 영화 정보 -->
+            <div class="indi-film-card" style="width: 40%; height: auto; padding: 0;">
+                <img src="/static/images/174.jpg" alt="Inception" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;">
+            </div>
+            <div style="width: 60%; padding-left: 20px;">
+                <!-- OpenAI 이미지 추가 -->
+                <img src="/static/images/openai.jpg" alt="OpenAI Logo" style="width: 100px; height: auto; display: block; margin-bottom: 10px;">
+                <h3 style="font-size: 1.5em; margin: 0;">인셉션</h3>
+                <p style="margin: 5px 0;">감독: 크리스토퍼 놀란</p>
+                <p style="margin: 5px 0;">장르: 공상 과학, 스릴러</p>
+                <p style="margin: 5px 0;">개봉년도: 2010</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="competitor-films-section">
+        <div class="competitor-film-left">
+            <div class="competitor-film-card">
+                <img src="/static/images/{{ comp_movie_title_1.movie_id }}.jpg" alt="{{ comp_movie_title_1.title }}">
+                <h3>{{ comp_movie_title_1.title }}</h3>
+            </div>
+        </div>
+        <div class="comparison-info">
+            <h2>지금 격돌중! 뭐 볼까!</h2>
+            <p>{{ comp_percentage_1 }}% VS {{ comp_percentage_2 }}%</p>
+            <p></p>
+            <p>다수 인플루언서 토론중!</p>
+            <p>영화배우, 영화감독 토론중!</p>
+        </div>
+        <div class="competitor-film-right">
+            <div class="competitor-film-card">
+                <img src="/static/images/{{ comp_movie_title_2.movie_id }}.jpg" alt="{{ comp_movie_title_2.title }}">
+                <h3>{{ comp_movie_title_2.title }}</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="movie-discussion-section">
+        <div class="discussion-thread">
+            <h3>영화 토론</h3>
+            <p>언뜻 <존 오브 인터레스트>는 이해하기 어려운 영화처럼 보입니다. 심미적인 숏과 예술적인 연출, 갑자기 뛰어넘는 시간선, 비명과 떠드는 군중의 목소리가 뒤섞인 사운드트랙. 이 모든 것들이 영화를 다소 난해하게 만듭니다.</p>
+            <a href="#" class="join-discussion">토론 참여하기</a>
+        </div>
+    </section>
+    
+    <!-- 실시간 컨텐츠 순위 섹션 -->
+<section class="content-ranking">
+    <h2>실시간 컨텐츠 순위</h2>
+    <ul>
+        {% for i in range(4) %}
+        <li>
+            <div class="ranking-item">
+                <img src="{{ url_for('static', filename='images/' + ['netflix', 'disney', 'apple', 'cineflickx'][i] + '.jpg') }}" alt="{{ ['Netflix', 'Disney Plus', 'Apple TV', 'Cine Flickx'][i] }}">
+                <div class="ranking-info">
+                    <h3 style="display: none;">{{ ['Netflix', 'Disney Plus', 'Apple TV', 'Cine Flickx'][i] }}</h3>
+                    <div class="additional-images">
+                        {% for j in range(i * 10, (i + 1) * 10) %}
+                        <img src="{{ url_for('static', filename='images/' + rank_movies[j].movie_id|string + '.jpg') }}" alt="{{ rank_movies[j].title }}">
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <!-- '더보기' 링크 추가 -->
+<div class="more-link" style="text-align: center; margin-top: 20px;">
+    <a href="#" class="more-button" style="font-size: 16px; color: #007bff; text-decoration: none; border: 1px solid #007bff; border-radius: 4px; padding: 10px 20px; display: inline-block;">더보기</a>
+</div>
+</section>
+
+<!-- 새추천 알림 섹션 -->
+<div class="alert-section">
+<div class="alert-item">
+    <span class="alert-title">새로운 알림!</span>
+    <div class="alert-description">
+        '델모'님 새롭게 들어온 친구들, 지인들, 지나가던 행인들, 유명인들의 추천을 확인해보세요.
+    </div>
+    <div class="alert-content">
+        <div class="alert-content-item">
+            <img src="/static/images/kakao.png" alt="Kakao 이미지" class="alert-image">
+            <span class="alert-text">84명의 친구가 추천을 해줬습니다.</span>
+        </div>
+        <div class="alert-content-item">
+            <img src="/static/images/insta.png" alt="Instagram 이미지" class="alert-image">
+            <span class="alert-text">401명의 인친이 추천을 눌렀습니다.</span>
+        </div>
+        <div class="alert-content-item">
+            <img src="/static/images/facebook.png" alt="Facebook 이미지" class="alert-image">
+            <span class="alert-text">104명의 지인들이 고심하여 추천하였습니다.</span>
+        </div>
+        <div class="alert-content-item">
+            <img src="/static/images/verified.png" alt="Verified 이미지" class="alert-image">
+            <span class="alert-text">유명인사가 추천을 누르고 갔네요! 누굴까요?.</span>
+        </div>
+    </div>
+</div>
+<!-- 추가적인 알림 항목을 여기에 넣을 수 있습니다. -->
+</div>
+  
+</main>
+<footer>
+<p>&copy; <span id="companyName">(주)GENI-US</span> 2024. 모든 권리 보유.</p>
+<p>
+    본 웹사이트에서 제공되는 모든 콘텐츠 및 자료(영화 추천 시스템, 알고리즘, 디자인, 텍스트, 이미지 등)는  (주)GENI-US</span>의 자산이며, 관련 저작권법 및 기타 지적 재산권 보호법에 <span id="companyName"> 의해 보호됩니다. 
+</p>
+<p>
+사용자의 무단 복제, 배포, 변경 또는 상업적 이용을 금지합니다.  웹사이트에 포함된 타사 콘텐츠는 각 소유자의 권리를 따릅니다.
+</p>  
+
+</footer>
+{% endblock %}

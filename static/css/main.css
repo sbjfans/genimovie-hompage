@@ -1,0 +1,675 @@
+ /* Basic styles for the menu */
+ nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    min-width: 200px; /* Set a minimum width for dropdown */
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    display: block;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+nav a {
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    color: #333;
+}
+
+nav a:hover {
+    background: #ddd;
+}
+
+
+
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 22px 0; /* Increased padding */
+    text-align: center;
+    position: relative;
+}
+
+.input-field {
+    width: 10%; /* Parent width adjustment */
+}
+
+.button {
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 0 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.button:hover {
+    background-color: #ddd;
+}
+
+.login-button, .register-button {
+    display: none; /* Hide these buttons */
+}
+
+.logout-button {
+    position: absolute;
+    right: 20px; /* Adjusted to the original position */
+    top: 25px; /* Original top position */
+    transform: scale(0.8);
+    transform-origin: top right;
+}
+
+.login-button {
+    position: absolute;
+    right: 70px; /* Adjusted to the original position */
+    top: 10px; /* Original top position */
+    transform: scale(0.7);
+    transform-origin: top right;
+    background-color: orange;
+    color: white;
+}
+
+.register-button {
+    position: absolute;
+    right: 120px; /* Adjusted to the original position */
+    top: 10px; /* Original top position */
+    transform: scale(0.7);
+    transform-origin: top right;
+    background-color: orange;
+    color: white;
+}
+
+nav {
+    margin-top: 10px; /* Reduces margin above nav to decrease gap */
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust gap between sections */
+    padding: 20px;
+}
+
+.movie-section, .additional-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.movie-section {
+    width: 50%; /* Adjust width as needed */
+    padding: 20px; /* Maintain padding */
+    margin: 1px 1px 1px 0; /* Reduced margin: top, right, bottom, left */
+}
+
+.movie-section h2 {
+    margin: 0 0 10px 0; /* Reduced top margin to minimize space above */
+    font-size: 2em; /* Increase font size */
+    text-align: left;
+}
+
+.movie-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between cards */
+    padding: 0; /* No padding */
+    margin: 0; /* No margin */
+}
+
+.movie-card {
+    width: calc(20% - 10px); /* Ensure 5 cards fit in one row */
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px; /* Padding inside card */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+}
+
+.movie-card h3 {
+    font-size: 1em; /* Decrease font size */
+    margin: 10px 0;
+    padding: 0 5px;
+}
+
+.movie-card .recommendations {
+    font-size: 0.9em; /* Adjust font size for recommendations */
+    color: #666; /* Color for recommendation text */
+    margin-top: 5px; /* Space above the recommendation text */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align items horizontally */
+}
+
+.movie-card .recommendations span {
+    margin-right: 10px; /* Space between recommendation text and button */
+}
+
+.recommend-button {
+    background-color: #2196f3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px; /* Smaller font size */
+}
+
+.recommend-button:hover {
+    background-color: #1976d2;
+}
+
+.additional-section {
+    width: 15%; /* Adjusted to half */
+    padding: 20px;
+    margin: 0; /* No surrounding margin */
+    height: 500px; /* Adjusted to half */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.influencer-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.influencer-card {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.influencer-card img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.influencer-card h3 {
+    margin: 0;
+    font-size: 1em;
+}
+
+.influencer-card .status {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: green;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.section-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.film-personnel-section,
+.dummy-section,
+.indi-film-section,
+.ai-recommendation-section {
+    background-color: #e0e0e0; /* Background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    padding: 20px; /* Internal padding */
+    box-sizing: border-box; /* Include padding and border in width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertical alignment */
+    align-items: center; /* Horizontal alignment */
+    margin: 0; /* Surrounding margin */
+}
+
+.film-personnel-section,
+.dummy-section {
+    width: 300px; /* Fixed width 300px */
+    height: 500px; /* Fixed height 500px */
+}
+
+.indi-film-section {
+    width: 300px; /* Fixed width 300px */
+    height: 250px; /* Adjusted height 250px */
+}
+
+.indi-film-section h2 {
+    margin: 0; /* Remove all margins */
+    padding: 10px; /* Remove all padding */
+    font-size: 1.2em; /* Adjust font size if needed */
+    position: relative; /* Allow positioning adjustments */
+    top: -10px; /* Move the title up */
+}
+
+.ai-recommendation-section {
+    height: 250px; /* Specific height for AI recommendation section */
+    width: 400px; /* Specific width for AI recommendation section */
+}
+
+.film-details {
+    font-size: 1em; /* Font size for content */
+    text-align: center; /* Center align text */
+}
+
+.indi-film-card {
+    width: 100%;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px; /* Padding inside card */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.indi-film-card img {
+    width: 100%;
+    height: auto;
+}
+
+.indi-film-card h3 {
+    font-size: 1.2em; /* Adjusted font size */
+    margin: 10px 0;
+}
+
+.competitor-films-section {
+    width: 600px;
+    height: 250px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.competitor-film-left,
+.competitor-film-right {
+    width: 25%; /* Adjust width to fit in the section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.competitor-film-card {
+    width: 120px; /* Card width */
+    height: 235px; /* Card height */
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.competitor-film-card img {
+    width: 100%;
+    height: auto;
+}
+
+.competitor-film-card h3 {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.competitor-films-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: none;
+    visibility: hidden; /* Hide the title */
+}
+
+.comparison-info {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 10px;
+    background: rgba(255, 255, 255, 0.8); /* Light background to improve readability */
+    border-radius: 8px;
+}
+
+.comparison-info h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+}
+
+.comparison-info p {
+    margin: 5px 0;
+}
+
+.film-personnel-section {
+background-color: #e0e0e0;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+padding: 20px;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+}
+
+.film-personnel-top {
+display: flex;
+flex-direction: row;
+height: 50%; /* 섹션의 위쪽 절반을 차지하도록 설정 */
+}
+
+.film-personnel-image {
+flex: 1;
+padding-right: 10px; /* 이미지와 글 사이의 간격 */
+}
+
+.film-personnel-image img {
+width: 100%;
+height: auto;
+border-radius: 8px;
+margin-top: 20px; /* 이미지 위쪽으로 20px 내리기 */
+}
+
+.film-personnel-text {
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.film-personnel-text p {
+margin: 10px 0;
+}
+
+.film-personnel-bottom {
+height: 50%; /* 섹션의 아래쪽 절반을 차지하도록 설정 */
+text-align: center; /* 중앙 정렬 */
+overflow-y: auto; /* 내용이 길어질 경우 스크롤 가능 */
+margin-top: -20px; /* 상단 여백을 줄이기 위해 -20px 설정 */
+}
+
+.film-personnel-bottom p {
+margin: 10px 0;
+}
+
+.film-personnel-bottom a {
+color: #007BFF; /* 링크 색상 */
+text-decoration: none; /* 밑줄 제거 */
+}
+
+.film-personnel-bottom a:hover {
+text-decoration: underline; /* 링크 호버 시 밑줄 추가 */
+}
+
+.dummy-section {
+background-color: #f9f9f9; /* 섹션 배경색 */
+border-radius: 8px; /* 모서리 둥글게 */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+padding: 20px; /* 내부 여백 */
+box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 */
+display: flex;
+justify-content: center; /* 가운데 정렬 */
+align-items: center; /* 세로 중앙 정렬 */
+height: 100%; /* 높이를 100%로 설정 */
+}
+
+.ad-image {
+max-width: 100%; /* 이미지 너비를 부모 요소에 맞게 조정 */
+height: auto; /* 자동 높이 조정 */
+border-radius: 8px; /* 모서리 둥글게 */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+.movie-discussion-section {
+background-color: #f4f4f4;
+padding: 20px;
+border-radius: 8px;
+margin-bottom: 30px;
+width: 330px; /* 섹션 너비 */
+height: 250px; /* 섹션 높이 */
+box-sizing: border-box;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.discussion-thread {
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 8px;
+padding: 10px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+width: 100%;
+height: 100%;
+/* margin-top: -20px; */
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.discussion-thread h3 {
+margin-top: 5px;
+font-size: 1.2em;
+color: #444;
+margin-bottom: 10px;
+}
+
+.discussion-thread p {
+font-size: 0.9em;
+color: #666;
+margin-bottom: 10px;
+margin-top: -5px;
+flex-grow: 1;
+}
+
+.discussion-thread .join-discussion {
+color: #007BFF;
+text-decoration: none;
+font-weight: bold;
+transition: color 0.3s;
+align-self: flex-end;
+}
+
+.discussion-thread .join-discussion:hover {
+color: #0056b3;
+text-decoration: underline;
+}
+
+
+/* 실시간 컨텐츠 순위 섹션 스타일 */
+.content-ranking {
+width: 1400px !important; /* 너비 설정 */
+height: 860px; /* 높이 설정 */
+background-color: #f4f4f4; /* 배경색 */
+border: 1px solid #ddd; /* 경계선 색상 */
+padding: 20px; /* 내부 여백 */
+margin: 0; /* 외부 여백 제거 */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 */
+border-radius: 8px; /* 모서리 둥글게 */
+margin-top: -30px;
+}
+
+.content-ranking h2 {
+font-size: 24px; /* 제목 크기 */
+margin-bottom: 10px; /* 제목 아래 여백 */
+margin-top: -5px;
+}
+
+.content-ranking ul {
+list-style: none; /* 리스트 스타일 제거 */
+padding: 0; /* 내부 여백 제거 */
+}
+
+.content-ranking li {
+margin-bottom: 20px; /* 항목 간 여백 */
+}
+
+.ranking-item {
+display: flex; /* 플렉스 박스 */
+align-items: flex-start; /* 상단 정렬 */
+background-color: #fff; /* 항목 배경색 */
+padding: 10px; /* 항목 내부 여백 */
+border: 1px solid #ddd; /* 항목 경계선 색상 */
+border-radius: 4px; /* 항목 모서리 둥글게 */
+}
+
+.ranking-item img {
+width: 150px; /* 이미지 너비 */
+height: 150px; /* 이미지 높이 */
+object-fit: cover; /* 이미지 크기 조정 */
+margin-right: 20px; /* 이미지와 텍스트 간 여백 */
+}
+
+.ranking-info {
+display: flex; /* 플렉스 박스 */
+flex-direction: column; /* 세로 방향 정렬 */
+justify-content: space-between; /* 콘텐츠 간 여백 분배 */
+}
+
+.ranking-info h3 {
+font-size: 18px; /* 제목 크기 */
+margin: 0; /* 제목 마진 제거 */
+}
+
+.additional-images {
+display: flex; /* 플렉스 박스 */
+flex-wrap: wrap; /* 줄 바꿈 */
+gap: -14px; /* 이미지 간 여백 */
+margin-top: 8px; /* 제목 아래 여백 */
+}
+
+.additional-images img {
+width: 100px; /* 추가 이미지 너비 */
+height: 135px; /* 추가 이미지 높이 */
+object-fit: cover; /* 이미지 크기 조정 */
+}
+
+
+
+/* 새추천 알림 섹션 스타일 */
+.alert-section {
+width: 205px !important; /* 너비 설정 */
+height: 860px; /* 높이 설정 */
+background-color: #f8f9fa; /* 배경색 수정 */
+border: 1px solid #e0e0e0; /* 테두리 색상 수정 */
+padding: 10px; /* 패딩 조정 */
+border-radius: 5px; /* 테두리 둥글기 수정 */
+margin: 10px 0; /* 마진 조정 */
+margin-top: -30px; /* 상단 마진 조정 */
+}
+
+.alert-item {
+padding: 8px;
+border-bottom: 1px solid #ddd; /* 항목 간의 구분선 추가 */
+}
+
+.alert-title {
+font-weight: bold;
+color: #333; /* 제목 색상 수정 */
+}
+
+.alert-description {
+color: #666; /* 설명 색상 수정 */
+}
+
+.alert-content {
+margin-top: 10px;
+}
+
+.alert-content-item {
+display: flex;
+align-items: center;
+margin-bottom: 10px; /* 항목 간의 간격 조정 */
+}
+
+.alert-image {
+width: 40px; /* 이미지 너비 조정 */
+height: 40px; /* 이미지 높이 조정 */
+margin-right: 5px; /* 이미지와 텍스트 간의 간격 조정 */
+}
+
+.alert-text {
+color: #333; /* 텍스트 색상 수정 */
+font-size: 12px; /* 텍스트 크기 조정 */
+}
+
+
+.small-image {
+width: 50px;
+height: 50px;
+background-color: #333; /* 원하는 배경 색 */
+}
+
