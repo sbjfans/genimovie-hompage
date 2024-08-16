@@ -304,7 +304,7 @@ def search_movies():
 
 
 # 가상 데이터 _user_reviews
-# 임의의 데이터
+# 임의의 데이터 
 users_reviews = [
     {'user_id': 1, 'username': 'Alice'},
     {'user_id': 2, 'username': 'Bob'},
